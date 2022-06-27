@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LCD</title>
+</head>
+<body>
+		<script type="text/javascript">
+			a = parseInt(prompt("Enter First Number : "));
+			b = parseInt(prompt("Enter Second Number : "));
+
+			if (a<b) {
+				n = a/2;
+			}
+			else{
+				n = b/2;
+			}
+			for (var i = 1; i<=n; i++) {
+				if (a%i==0 && b%i==0) {
+					gcd = i;
+				}
+			}
+			document.write("Least Common Multiple : "+ ( a * b ) / gcd);
+		</script>
+</body>
+</html>
