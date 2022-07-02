@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>maxNumber</title>
+</head>
+<body>
+	<script type="text/javascript">
+		n=parseInt(prompt("Enter size of a array : "));
+		var array=new Array();
+		for(i=0;i<n;i++){
+			array[i]=parseInt(prompt("Enter array element : "));
+		}
+		max=parseInt(array[0]);
+		for(j=1;j<n;j++){
+			if(max<array[j]){
+				max=array[j]
+			}
+		}
+		document.write("Maximum number is : "+max)
+	</script>
+</body>
+</html>
+Footer
+© 2022 GitHub, In

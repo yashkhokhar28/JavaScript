@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>positionOfA</title>
+</head>
+<body>
+		<script type="text/javascript">
+			
+			n = prompt("enter a string");
+			len = n.length;
+			for (var i = 0; i < len; i++) {
+				if (n.charAt(i)=='a') {
+					n1 = parseInt(i);
+					break;
+				}
+			}
+			for (var j = len - 1; j >= 0; j--) {
+				if (n.charAt(j)=='a') {
+					n2 = parseInt(j);
+					break;
+				}
+			}
+			c = n.substring(n1+1,n2);
+			document.write(c);
+		</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Sorting</title>
+</head>
+<body>
+	<script type="text/javascript">
+		n=parseInt(prompt("Enter size of a array : "));
+		var array=new Array();
+		for(i=0;i<n;i++){
+			array[i]=parseInt(prompt("Enter array element : "));
+		}
+			document.write(array.sort(function(a, b){return a - b})+"<br/>");
+	</script>
+</body>
+</html>
