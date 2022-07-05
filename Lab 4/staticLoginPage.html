@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>staticLoginPage</title>
+</head>
+<body>
+	
+		<input type="text" name="" placeholder="enter user name" id="txtUserName"></br>
+		<input type="password" name="" placeholder="enter password" id="txtPassword">
+		<button onclick="togglePass()" id="toggleButton">show</button></br>
+		<button onclick="loginMethod()">login</button>
+		
+
+		<script type="text/javascript">
+
+			function loginMethod() {
+				var v1 = document.getElementById("txtUserName");
+				var v2 = document.getElementById("txtPassword");
+				if (v1.value=="Yash" && v2.value=="Khokhar") {
+					document.write("Valid User");
+				}
+				else{
+					document.write("Invalid User");
+				}
+			}
+
+			function togglePass() {
+				var pas = document.getElementById("txtPassword");
+				var but = document.getElementById("toggleButton");
+				if (pas.type=="text") {
+					pas.type = "password";
+					but.value = "show";
+				}
+				else{
+					pas.type = "text";
+					but.value = "hide";
+				}
+			}
+
+
+
+		</script>
+		
+
+</body>
+</html>

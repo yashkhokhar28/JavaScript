@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="guiCalc.css">
+</head>
+
+<body>
+	<dir class="container">
+		<h1>Calculator</h1>
+
+		<div class="calculator">
+			<input type="text" name="screen"id="screen">
+			<table>
+				<tr>
+					<td><button id="button">back</button></td>
+					<td><button id="button" onclick="abs()">+/-</button></td>
+					<td><button id="button" onclick="clearall()">C</button></td>
+					<td><button id="button">%</button></td>
+				</tr>
+
+				<tr>
+					<td><button id="button" onclick="print(this.innerHTML)">7</button></td>
+					<td><button id="button" onclick="print(this.innerHTML)">8</button></td>
+					<td><button id="button" onclick="print(this.innerHTML)">9</button></td>
+					<td><button id="button">X</button></td>
+				</tr>
+
+				<tr>
+					<td><button id="button" onclick="print(this.innerHTML)">4</button></td>
+					<td><button id="button" onclick="print(this.innerHTML)">5</button></td>
+					<td><button id="button" onclick="print(this.innerHTML)">6</button></td>
+					<td><button id="button">-</button></td>
+				</tr>
+
+				<tr>
+					<td><button id="button" onclick="print(this.innerHTML)">1</button></td>
+					<td><button id="button" onclick="print(this.innerHTML)">2</button></td>
+					<td><button id="button" onclick="print(this.innerHTML)">3</button></td>
+					<td><button id="button">+</button></td>
+				</tr>
+
+				<tr>
+					<td><button id="button" onclick="print(this.innerHTML)">0</button></td>
+					<td><button id="button" onclick="print(this.innerHTML)">.</button></td>
+					<td><button id="button">/</button></td>
+					<td><button id="button">=</button></td>
+				</tr>
+			</table>
+		</div>
+	</dir>
+
+
+
+</body>
+<script type="text/javascript">
+
+	function print(txt) { 
+		var first = document.getElementById("screen");
+		first.value += txt;
+	}
+	function clearall() {
+		var first = document.getElementById("screen");
+		first.value = "" ;
+	}
+	function abs(txt) {
+		var first = document.getElementById("screen");
+		first.value *= -1;
+	}
+
+</script>
+
+</html>

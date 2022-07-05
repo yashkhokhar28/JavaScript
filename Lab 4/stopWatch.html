@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>stopWatch</title>
+</head>
+<body>
+				<button onclick="startTimer()">start</button>
+				<button onclick="stopTimer()">stop</button>
+				<button onclick="resetTimer()">reset</button>
+
+				<h1 id="showTimer">---Timer---</h1>
+				<h1 id="counter">00.00</h1>
+
+				<script type="text/javascript">
+
+					var a = 0;
+					var c;
+
+					function startTimer() {
+						c = setInterval(printCounter,10)
+
+					}
+
+
+					function resetTimer() {
+						stopTimer();
+						a=0;
+					var temp = document.getElementById("counter");
+					temp.innerHTML="00.00";
+					}
+
+					function printCounter() {
+						a++;
+						var temp = document.getElementById("counter");
+						temp.innerHTML=a/100;
+					}
+
+					function stopTimer() {
+						clearInterval(c);
+					}
+
+
+				</script>
+	
+</body>
+</html>

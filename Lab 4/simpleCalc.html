@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>simpleCalc</title>
+</head>
+<body>
+		<table>
+			<tr>
+				<td colspan="4"><input type="text" name="" placeholder="first value" id="no1"></td>
+			</tr>
+			<tr>
+				
+				<td colspan="4"><input type="text" name="" placeholder="second value" id="no2"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="+" onclick="add()"></td>
+				<td><input type="button" value="-" onclick="sub()"></td>
+				<td><input type="button" value="*" onclick="mul()"></td>
+				<td><input type="button" value="/" onclick="div()"></td>
+			</tr>
+			<td colspan="4" ><h1 id="ans"></h1></td>
+			</tr>
+
+
+		</table>
+
+		<script type="text/javascript">
+			function add() {
+				var number1 = document.getElementById("no1");
+				var number2 = document.getElementById("no2");
+				var answer =  document.getElementById("ans");
+
+				sum = parseInt(no1.value) + parseInt(no2.value);
+
+				ans.innerHTML = sum;
+			}
+			function sub() {
+				var number1 = document.getElementById("no1");
+				var number2 = document.getElementById("no2");
+				var answer =  document.getElementById("ans");
+
+				sum = parseInt(no1.value) - parseInt(no2.value);
+
+				ans.innerHTML = sum;
+			}
+			function mul() {
+				var number1 = document.getElementById("no1");
+				var number2 = document.getElementById("no2");
+				var answer =  document.getElementById("ans");
+
+				sum = parseInt(no1.value) * parseInt(no2.value);
+
+				ans.innerHTML = sum;
+			}
+			function div() {
+				var number1 = document.getElementById("no1");
+				var number2 = document.getElementById("no2");
+				var answer =  document.getElementById("ans");
+
+				sum = parseInt(no1.value) / parseInt(no2.value);
+
+				ans.innerHTML = sum;
+			}
+			
+
+
+
+
+
+		</script>
+</body>
+</html>
