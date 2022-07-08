@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GUI Calculator</title>
+	<link rel="stylesheet" type="text/css" href="gui_Calc.css">
+</head>
+<body>
+	<div class="container">
+		
+		<h1>Calculator</h1>
+
+		<div class="calc">
+			
+			<input type="text" name="" id="inout">
+			<table>
+				<tr>
+					<td><button onclick="obo(this)">back</button></td>
+					<td><button onclick="abs(this)">+/-</button></td>
+					<td><button onclick="clearAll(this)">C</button></td>
+					<td><button onclick="addOp(this)">%</button></td>
+
+				</tr>
+
+				<tr>
+					<td><button onclick="addNumber(this)">7</button></td>
+					<td><button onclick="addNumber(this)">8</button></td>
+					<td><button onclick="addNumber(this)">9</button></td>
+					<td><button onclick="addOp(this)">*</button></td>
+
+				</tr>
+
+				<tr>
+					<td><button onclick="addNumber(this)">4</button></td>
+					<td><button onclick="addNumber(this)">5</button></td>
+					<td><button onclick="addNumber(this)">6</button></td>
+					<td><button onclick="addOp(this)">-</button></td>
+
+				</tr>
+
+				<tr>
+					<td><button onclick="addNumber(this)">1</button></td>
+					<td><button onclick="addNumber(this)">2</button></td>
+					<td><button onclick="addNumber(this)">3</button></td>
+					<td><button onclick="addOp(this)">+</button></td>
+
+				</tr>
+
+				<tr>
+					<td><button onclick="addNumber(this)">0</button></td>
+					<td><button onclick="addNumber(this)">.</button></td>
+					<td><button onclick="addOp(this)">/</button></td>
+					<td><button onclick="displayAns(this)">=</button></td>
+
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+
+		var oldval=0;
+		var oldop="";
+		
+		function addNumber(n) {
+			io = document.getElementById("inout");
+			io.value += n.innerHTML; 
+		}
+		function addOp(n) {
+			io = document.getElementById("inout");
+			oldval = io.value;
+			oldop = n.innerHTML;
+			io.value = "";
+		}
+		function displayAns() {
+			io = document.getElementById("inout");
+			newval = io.value;
+			if (oldop=="+") {
+				ans = parseInt(newval)+parseInt(oldval);
+			} else if (oldop=="-") {
+				ans = parseInt(newval)-parseInt(oldval);
+			} else if (oldop=="*") {
+				ans = parseInt(newval)*parseInt(oldval);
+			} else if (oldop=="/") {
+				ans = parseInt(newval)/parseInt(oldval);
+			} else if (oldop=="%") {
+				ans = parseInt(newval)%parseInt(oldval);
+			}
+			io.value = ans;
+		}
+		function clearAll(argument) {
+			io = document.getElementById("inout");
+			io.value = "";
+			oldval = "";
+			oldop = "";
+		}
+		function abs(n) {
+			io = document.getElementById("inout");
+			io.value *= (-1)
+		}
+		function obo() {
+			io = document.getElementById("inout");
+			io.value = io.value.slice(0,-1);
+		}
+
+
+
+	</script>
+
+</body>
+</html>
