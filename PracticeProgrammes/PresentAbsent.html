@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>PresentAbsent</title>
+</head>
+<body>
+		<button onclick="checkall()">check all</button>
+		<button onclick="uncheckall()">uncheck all</button></br>
+		<div id="dev" style="border: 1px solid black;  width: 100vh; position: fixed; margin-left: 500px;">&nbsp;</div>
+
+		<script type="text/javascript">
+			function createelement(start,end) {
+				for (var i = start; i <= end; i++) {
+						document.write("<input type='checkbox' onclick='check()'>");
+						document.write("<span>"+i+"</span></br>");
+				}
+			}
+			createelement(101,165);
+			createelement(201,285);
+			createelement(301,363);
+			function checkall() {
+				temp = document.getElementsByTagName('input');
+				for (var i = 0; i < temp.length; i++) {
+					temp[i].checked=true;
+				}
+				document.getElementById('dev').innerHTML='&nbsp;';
+			}
+			function uncheckall() {
+				temp = document.getElementsByTagName('input');
+				for (var i = 0; i < temp.length; i++) {
+					temp[i].checked=false;
+				}
+				check();
+			}
+			function check() {
+				temp2 = document.getElementById("dev");
+				temp3 = document.getElementsByTagName('span');
+				temp2.innerHTML = '';
+				temp = document.getElementsByTagName('input');
+				for (var i = 0; i < temp.length; i++) {
+					 if (temp[i].checked==false){
+					 		temp2.innerHTML += temp3[i].innerHTML+' , ';
+					 }
+				}
+			}
+		</script>
+</body>
+</html>
