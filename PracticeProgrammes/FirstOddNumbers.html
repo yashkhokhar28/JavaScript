@@ -1,0 +1,20 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First N Odd Numbers</title>
+  </head>
+  <body>
+    <script>
+      n = prompt(parseInt("enter a number : "));
+      var myArray = [];
+      for (let index = 1; index < n; index += 2) {
+        if (n % index != 0) {
+          myArray.push(index);
+        }
+      }
+      console.log(myArray);
+    </script>
+  </body>
+</html>
