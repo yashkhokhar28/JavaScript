@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <form name="myform">
+      <table>
+        <tr>
+          <td>Enter Student's Name</td>
+          <td>:</td>
+          <td><input type="text" id="studentName" /></td>
+        </tr>
+        <tr>
+          <td>Enter Mobile Number</td>
+          <td>:</td>
+          <td><input type="text" id="studentMobileNumber" /></td>
+        </tr>
+        <tr>
+          <td>Enter Semester</td>
+          <td>:</td>
+          <td><input type="text" id="studentSemester" /></td>
+        </tr>
+        <tr>
+          <td>Enter Course</td>
+          <td>:</td>
+          <td><input type="text" id="studentCourse" /></td>
+        </tr>
+        <tr>
+          <td>Enter Email Address</td>
+          <td>:</td>
+          <td><input type="text" id="studentEmail" /></td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="button"
+              value="Submit"
+              onclick="checkFormValidation()"
+            />
+          </td>
+        </tr>
+      </table>
+      <h1 id="answer"></h1>
+    </form>
+    <script>
+      function checkFormValidation() {
+        const name = document.getElementById("studentName");
+        const mobilenumber = document.getElementById("studentMobileNumber");
+        const semester = document.getElementById("studentSemester");
+        const course = document.getElementById("studentCourse");
+        const email = document.getElementById("studentEmail");
+
+        var namepattern = "^[a-zA-Z]";
+        var mobilenumberpattern = "^[0-9]{10}$";
+        var emailpattern =
+          /^[a-z]{1}[a-z0-9]+[-_.]?[a-z0-9]+@(gmail|yahoo)\.(com|org|org)$/;
+        var semesterpattern = "^[1-8]{1}$";
+        var coursepattern = "^(B.TECH|B.E.|MBA|BBA|BCA|B.COM|M.COM)";
+
+        var regex1 = new RegExp(namepattern);
+        var regex2 = new RegExp(mobilenumberpattern);
+        var regex3 = new RegExp(semesterpattern);
+        var regex4 = new RegExp(coursepattern);
+        var regex5 = new RegExp(emailpattern);
+
+        if (
+          regex1.test(name) &&
+          regex2.test(mobilenumber) &&
+          regex3.test(semester) &&
+          regex4.test(course) &&
+          regex5.test(email)
+        ) {
+          document.write("Valid Details");
+        }
+      }
+    </script>
+  </body>
+</html>
