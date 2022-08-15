@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event</title>
+</head>
+<body>
+    <h3 >Press Any Vowel</h3>
+    <input type="text" onkeypress="keypressed(event)">
+    <script>
+        function keypressed(event) {
+           var x = event.key;
+           if (x=='a') {
+            alert("vowel is pressed");
+           }
+           if (x=='e') {
+            alert("vowel is pressed");
+           }
+           if (x=='i') {
+            alert("vowel is pressed");
+           }
+           if (x=='o') {
+            alert("vowel is pressed");
+           }
+           if (x=='u') {
+            alert("vowel is pressed");
+           } else{
+            alert("it is not vowel")
+           }
+        }
+    </script>
+</body>
+</html>
