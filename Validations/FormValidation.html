@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,74 +7,80 @@
     <title>Form Validation</title>
   </head>
   <body>
-    <form name="myform">
+    <form>
       <table>
         <tr>
-          <td>Enter Student's Name</td>
+          <td>Student Name</td>
           <td>:</td>
           <td><input type="text" id="studentName" /></td>
         </tr>
         <tr>
-          <td>Enter Mobile Number</td>
+          <td>Student Mobile Number</td>
           <td>:</td>
           <td><input type="text" id="studentMobileNumber" /></td>
         </tr>
         <tr>
-          <td>Enter Semester</td>
+          <td>Student Semester</td>
           <td>:</td>
           <td><input type="text" id="studentSemester" /></td>
         </tr>
         <tr>
-          <td>Enter Course</td>
+          <td>Student Course</td>
           <td>:</td>
           <td><input type="text" id="studentCourse" /></td>
         </tr>
         <tr>
-          <td>Enter Email Address</td>
+          <td>Student E-Mail Address</td>
           <td>:</td>
           <td><input type="text" id="studentEmail" /></td>
         </tr>
         <tr>
           <td>
-            <input
-              type="button"
-              value="Submit"
-              onclick="checkFormValidation()"
-            />
+            <button onclick="checkValidation()" id="submit">Submit</button>
           </td>
         </tr>
       </table>
-      <h1 id="answer"></h1>
     </form>
     <script>
-      function checkFormValidation() {
-        const name = document.getElementById("studentName");
-        const mobilenumber = document.getElementById("studentMobileNumber");
-        const semester = document.getElementById("studentSemester");
-        const course = document.getElementById("studentCourse");
-        const email = document.getElementById("studentEmail");
+      function checkValidation(params) {
+        var studentname = document.getElementById("studentName");
+        var studentmobilenumber = document.getElementById(
+          "studentMobileNumber"
+        );
+        var stidentsemester = document.getElementById("studentSemester");
+        var studentcourse = document.getElementById("studentCourse");
+        var studentemailaddress = document.getElementById("studentEmail");
+        var submit = document.getElementById("submit");
 
-        var namepattern = "^[a-zA-Z]";
-        var mobilenumberpattern = "^[0-9]{10}$";
-        var emailpattern =
-          /^[a-z]{1}[a-z0-9]+[-_.]?[a-z0-9]+@(gmail|yahoo)\.(com|org|org)$/;
-        var semesterpattern = "^[1-8]{1}$";
-        var coursepattern = "^(B.TECH|B.E.|MBA|BBA|BCA|B.COM|M.COM)";
+        // var namepattern = "^[a-zA-Z]";
+        // var mobilenumberpattern = "^[0-9]{10}$";
+        // var emailpattern =
+        //   /^[a-z]{1}[a-z0-9]+[-_.]?[a-z0-9]+@(gmail|yahoo)\.(com|org|org)$/;
+        // var semesterpattern = "^[1-8]{1}$";
+        // var coursepattern = "^(B.TECH|B.E.|MBA|BBA|BCA|B.COM|M.COM)";
 
-        var regex1 = new RegExp(namepattern);
-        var regex2 = new RegExp(mobilenumberpattern);
-        var regex3 = new RegExp(semesterpattern);
-        var regex4 = new RegExp(coursepattern);
-        var regex5 = new RegExp(emailpattern);
+        var studentnamepattern = "";
+        var studentmobilenumberpattern = "";
+        var stidentsemesterpattern = "";
+        var studentcoursepattern = "";
+        var studentemailaddresspattern = "";
+
+        var regex1 = new RegExp(studentnamepattern);
+        var regex2 = new RegExp(studentmobilenumberpattern);
+        var regex3 = new RegExp(stidentsemesterpattern);
+        var regex4 = new RegExp(studentcoursepattern);
+        var regex5 = new RegExp(studentemailaddresspattern);
 
         if (
-          regex1.test(name) &&
-          regex2.test(mobilenumber) &&
-          regex3.test(semester) &&
-          regex4.test(course) &&
-          regex5.test(email)
+          regex1.test(studentname) &&
+          regex2.test(studentmobilenumber) &&
+          regex3.test(stidentsemester) &&
+          regex4.test(studentcourse) &&
+          regex5.test(studentemailaddress)
         ) {
-          document.write("Valid Details");
+          document.write("Valid");
+        } else {
+          alert("Invalid");
         }
       }
     </script>
