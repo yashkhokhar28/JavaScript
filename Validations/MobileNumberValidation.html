@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,22 +15,23 @@
         <td>
           <input
             type="button"
-            id="submitbtn"
+            id="mobile"
             value="Submit"
-            onclick="checkMobileNumberPattern()"
+            onclick="checkMobileNumber()"
           />
         </td>
       </tr>
     </table>
     <script>
       const mobileNumber = document.getElementById("mobilenumber");
-      var mobilenumberPattern = "^[0-9]{10}$";
-      var regex = new RegExp(mobilenumberPattern);
-      function checkMobileNumberPattern() {
+      //   const mobilenumberpattern = "^[0-9]{10}$";
+      const mobilenumberpattern = "mobile number pattern here";
+      const regex = new RegExp(mobilenumberpattern);
+      function checkMobileNumber(params) {
         if (regex.test(mobileNumber.value)) {
-          document.write("Valid Mobile Number");
+          document.write("Valid");
         } else {
-          alert("Enter Valid Mobile Number");
+          document.write("Invalid ");
         }
       }
     </script>
