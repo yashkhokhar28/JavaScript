@@ -1,34 +1,34 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouse Event</title>
-</head>
-<body>
-    <h3 >Press Any Vowel</h3>
-    <input type="text" onkeypress="keypressed(event)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Event Programmes</title>
+    <h1>Write JavaScript that handles following mouse event.</h1>
+    <h3>
+      1. If mouse left button pressed on browser it displayed message “Left
+      Clicked”.
+    </h3>
+    <h3>
+      2. If mouse right button pressed on browser it displayed message “Right
+      Clicked”.
+    </h3>
+  </head>
+  <body>
+    <div onmousedown="WhichButton(event)">
+      Click this text with one of your mouse buttons to return a number.
+      <p>
+        0 = The left mouse button<br />
+        1 = The middle mouse button<br />
+        2 = The right mouse button
+      </p>
+    </div>
+
     <script>
-        function keypressed(event) {
-           var x = event.key;
-           if (x=='a') {
-            alert("vowel is pressed");
-           }
-           if (x=='e') {
-            alert("vowel is pressed");
-           }
-           if (x=='i') {
-            alert("vowel is pressed");
-           }
-           if (x=='o') {
-            alert("vowel is pressed");
-           }
-           if (x=='u') {
-            alert("vowel is pressed");
-           } else{
-            alert("it is not vowel")
-           }
-        }
+      function WhichButton(event) {
+        alert("You pressed button: " + event.button);
+      }
     </script>
-</body>
+  </body>
 </html>
