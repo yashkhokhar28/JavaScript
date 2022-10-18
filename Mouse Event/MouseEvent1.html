@@ -1,25 +1,60 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouse Event</title>
-</head>
-<body id="demo">
-    <h3>Press To Change Color To Blue</h3>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Event Programme</title>
+    <h1>
+      Write a JavaScript that handles following mouse events. Add necessary
+      elements.
+    </h1>
+    <h3>(i) JavaScript gives the key code for the key pressed.</h3>
+    <h3>
+      (ii) If the key pressed is “a”,”e”,”i”,”o”,”u”, the script should announce
+      that vowel is pressed.
+    </h3>
+    <h3>(iii) When the key is pressed background should change to blue.</h3>
+  </head>
+  <body id="body1">
+    <h3>Press Any Key</h3>
+    <input type="text" onkeypress="keypressed(event)" />
+    <p>Keycode :</p>
+    <p id="demo"></p>
     <script>
-        document.getElementById("demo").onmousedown = function(){
-            mousedown();
+      document.getElementById("body1").onkeydown = function () {
+        mousedown();
+      };
+      document.getElementById("body1").onkeyup = function () {
+        mouseup();
+      };
+      function mousedown() {
+        document.getElementById("body1").style.backgroundColor = "blue";
+      }
+      function mouseup() {
+        document.getElementById("body1").style.backgroundColor = "white";
+      }
+
+      function keypressed(event) {
+        var x = event.key;
+        var keycode = event.which;
+        document.getElementById("demo").innerHTML = keycode;
+        if (x == "a" || x == "A") {
+          alert("Vowel Pressed");
         }
-        document.getElementById("demo").onmouseup = function(){
-            mouseup();
+        if (x == "e" || x == "E") {
+          alert("Vowel Pressed");
         }
-        function mousedown() {
-            document.getElementById("demo").style.backgroundColor = "blue";
+        if (x == "i" || x == "I") {
+          alert("Vowel Pressed");
         }
-        function mouseup() {
-            document.getElementById("demo").style.backgroundColor = "green";
+        if (x == "o" || x == "O") {
+          alert("Vowel Pressed");
         }
+        if (x == "u" || x == "U") {
+          alert("Vowel Pressed");
+        }
+      }
     </script>
-</body>
+  </body>
 </html>
