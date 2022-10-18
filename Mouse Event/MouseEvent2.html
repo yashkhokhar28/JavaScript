@@ -1,25 +1,52 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouse Event</title>
-</head>
-<body id="div1" >
-    <h3 id="demo">Hover On Me To Change Color</h3>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Evemt Programme</title>
+    <h1>
+      Write a JavaScript that handles following mouse events. Add necessary
+      elements.
+    </h1>
+    <h3>
+      (i) If the mouse is over the heading heading should turn yellow and if the
+      mouse goes out of the heading it should turn black.
+    </h3>
+    <h3>(ii) If findtime button is clicked show time and date information.</h3>
+    <h3>
+      (iii) If button named “red” is clicked, background should change to red
+      and If button named “green” is clicked, background should change to green.
+    </h3>
+  </head>
+  <body id="body">
+    <p id="paragraph">Hower On Me !!!</p>
+    <button id="btn1" onclick="findDateTime()">Find Time</button>
+    <button id="btn2" onclick="changeColorToRed()">Red</button>
+    <button id="btn3" onclick="changeColorToBlack()">Green</button>
     <script>
-        document.getElementById("demo").onmouseover = function(){
-            mouseover();
-        }
-        document.getElementById("demo").onmouseout = function(){
-            mouseout();
-        }
-        function mouseover() {
-            document.getElementById("div1").style.backgroundColor = "red";
-        }
-        function mouseout() {
-            document.getElementById("div1").style.backgroundColor = "black";
-        }
+      document.getElementById("paragraph").onmouseover = function () {
+        coloryellow();s
+      };
+      function coloryellow() {
+        document.getElementById("body").style.backgroundColor = "yellow";
+      }
+      document.getElementById("paragraph").onmouseleave = function () {
+        colorBlack();
+      };
+      function colorBlack() {
+        document.getElementById("body").style.backgroundColor = "black";
+      }
+      function findDateTime() {
+        const datetime = new Date();
+        document.getElementById("btn1").innerHTML = datetime;
+      }
+      function changeColorToRed(params) {
+        document.getElementById("body").style.backgroundColor = "red";
+      }
+      function changeColorToBlack(params) {
+        document.getElementById("body").style.backgroundColor = "green";
+      }
     </script>
-</body>
+  </body>
 </html>
